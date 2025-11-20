@@ -5,7 +5,7 @@
 int main(void)
 {
     int r[N][N] = {0};
-    int i, j, sum = 0;
+    int i, j, sum = 0, col = 0;
 
     for (i = 0; i < N; i++) {
         printf("Enter row %d: ", i+1);
@@ -22,5 +22,14 @@ int main(void)
         sum = 0;
     }
 
+    printf("\nColumn totals: ");
+    for (j = 0; j < N; j++) {
+        for (i = 0; i < N; i++) {
+            col += r[i][j];
+        }
+        printf("%d ", col);
+        col = 0;
+    }
+    printf("\n");
     return 0;
 }
